@@ -7,15 +7,5 @@
                 "url": "https://www.ntv.com.tr/son-dakika.rss"
             }
         ]
-    },
-
-    {
-        "folder": "Teknoloji",
-        "feeds": [
-            {
-                "title": "TechCrunch",
-                "url": "https://techcrunch.com/feed/"
-            }
-        ]
     }
 ]

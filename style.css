@@ -1,40 +1,89 @@
 html.light-theme {
-  --bg-color: #fff6ef;
-  --text-color: #503b2c;
-  --header-color: #2c3e50;
-  --secondary: #d8bfa7;
-  --category-bg-light: #f1e6db;
-  --category-bg-hover-light: #edd9c5;
-  --category-span-bg-light: #e5d4c2;
-  --table-border-color-light: #f1e6db;
-  --table-header-bg-light: #f1e6db;
-  --table-even-row-bg-light: #f1e6db;
-  --table-row-hover-light: #e9d3bd;
-  --link-color-light: #a76e06;
-  --search-border-color-light: #ccc;
-  --search-placeholder-color-light: #999;
+  --bg-color: #f8fafc;
+  --text-color: #334155;
+  --header-color: #1e293b;
+  --secondary: #e2e8f0;
+  --category-bg-light: #f1f5f9;
+  --category-bg-hover-light: #e2e8f0;
+  --category-span-bg-light: #cbd5e1;
+  --table-border-color-light: #e2e8f0;
+  --table-header-bg-light: #f1f5f9;
+  --table-even-row-bg-light: #f8fafc;
+  --table-row-hover-light: #e2e8f0;
+  --link-color-light: #2563eb;
+  --search-border-color-light: #cbd5e1;
+  --search-placeholder-color-light: #94a3b8;
   --search-bg-color-light: #ffffff;
 }
 
 html:not(.light-theme) {
-    --bg-color: #111;
-    --secondary: #222222;
-    --text-color: #ccc;
-    --header-color: #ecf0f1;
-    --category-bg-light: #222;
-    --category-bg-hover-light: #333;
-    --category-span-bg-light: #444;
-    --table-border-color-light: #333;
-    --table-header-bg-light: #444;
-    --table-even-row-bg-light: #333;
-    --table-row-hover-light: #444;
-    --link-color-light: #f39c12;
-    --search-border-color-light: #333;
-    --search-placeholder-color-light: #bbb;
+    --bg-color: #0f172a;
+    --secondary: #1e293b;
+    --text-color: #cbd5e1;
+    --header-color: #f1f5f9;
+    --category-bg-light: #1e293b;
+    --category-bg-hover-light: #334155;
+    --category-span-bg-light: #475569;
+    --table-border-color-light: #334155;
+    --table-header-bg-light: #1e293b;
+    --table-even-row-bg-light: #1e293b;
+    --table-row-hover-light: #334155;
+    --link-color-light: #60a5fa;
+    --search-border-color-light: #334155;
+    --search-placeholder-color-light: #94a3b8;
     --search-bg-color: transparent;
 }
 
+/* Icon colors for modern blue theme */
+h1 svg {
+    color: #3b82f6;
+}
 
+footer a svg,
+.btn svg,
+.action-bar button svg,
+.select-category-btn svg {
+    color: var(--link-color-light);
+}
+
+.selected-count svg {
+    color: var(--link-color-light);
+}
+
+.selected-count.active svg {
+    color: var(--bg-color);
+}
+
+/* Theme toggle icons */
+input:not(:checked) + .slider .icon.sun {
+    color: #3b82f6;
+}
+
+input:checked + .slider .icon.moon {
+    color: #60a5fa;
+}
+
+/* Checkbox styling */
+.rss-checkbox {
+  background: var(--secondary);
+}
+.rss-checkbox:checked {
+    background: var(--link-color-light);
+}
+.rss-checkbox:checked::after {
+    border-color: var(--bg-color);
+}
+
+/* Buttons */
+.select-category-btn:hover {
+    background: var(--link-color-light);
+    color: var(--bg-color);
+}
+.select-category-btn:hover svg {
+    color: var(--bg-color);
+}
+
+/* Rest of the CSS remains the same */
 *{
   margin: 0;
   padding: 0;
@@ -54,7 +103,6 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -66,7 +114,7 @@ body {
 }
 
 h1 {
-  color: var(--text-color);
+  color: var(--header-color);
   font-size: 30px;
   text-align: left;
   display: flex;
@@ -131,7 +179,7 @@ h1 {
 }
 
 input:checked + .slider {
-  background-color: var(--text-color);
+  background-color: #475569;
 }
 
 input:checked + .slider:before {
@@ -142,14 +190,6 @@ input:checked + .slider:before {
     font-size: 18px;
     z-index: 1;
     transition: color 0.3s ease;
-}
-
-input:checked + .slider .icon.moon {
-    color: #fff;
-}
-
-input:not(:checked) + .slider .icon.sun {
-    color: #fdd835;
 }
     
 .search-container {
@@ -261,7 +301,6 @@ input:not(:checked) + .slider .icon.sun {
   display: block;
 }
 
-
 .category-header span {
     background-color: var(--bg-color);
     color: var(--link-color-light);
@@ -309,7 +348,6 @@ input:not(:checked) + .slider .icon.sun {
   margin-bottom: 20px;
   display: block;
 }
-
 
 .category-content table {
   width: 100%;
@@ -415,16 +453,6 @@ footer a:hover{
   background-color: var(--table-even-row-bg-light);
 }
 
-h1 svg {
-    color: #feb400;
-}
-
-footer p {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-
 .search-results-list a {
     overflow-wrap: anywhere;
     color: var(--link-color-light);
@@ -439,7 +467,6 @@ footer p {
 .search-results-list a:hover {
   text-decoration: underline;
 }
-
 
 .no-results {
   text-align: center;
@@ -471,10 +498,6 @@ footer p {
     color: var(--text-color);
 }
 
-.btn svg, footer a svg {
-    color: var(--link-color-light);
-}
-
 .selected-count {
     background: var(--category-bg-light);
     color: var(--text-color);
@@ -493,14 +516,6 @@ footer p {
     color: var(--bg-color);
 }
 
-.selected-count svg{
-  color: var(--link-color-light);
-}
-
-.selected-count.active svg {
-    color: var(--bg-color);
-}
-
 .action-bar {
     background: var(--bg-color);
     display: flex;
@@ -516,10 +531,6 @@ footer p {
 .action-bar button {
     width: 100%;
     flex: 1;
-}
-
-.action-bar button svg {
-    color: var(--link-color-light);
 }
 
 .theme-switch .icon {
@@ -711,4 +722,3 @@ footer p {
     display: flex;
     gap: 10px;
 }
-

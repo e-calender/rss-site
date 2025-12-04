@@ -8,14 +8,4 @@
             }
         ]
     }
-
-     {
-        "folder": "Turkiye",
-        "feeds": [
-            {
-                "title": "NTV - Turkiye",
-                "url": "https://www.ntv.com.tr/turkiye.rss"
-            }
-        ]
-    }
 ]

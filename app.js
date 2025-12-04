@@ -1,47 +1,78 @@
-// RSS kaynaklarını yükle
+// RSS verilerini yükle
 async function loadFeeds() {
-    const res = await fetch("feeds.json");
-    const feeds = await res.json();
+    const response = await fetch('feeds.json');
+    const data = await response.json();
+    renderFolders(data);
+}
 
-    const feedList = document.getElementById("feedList");
+// Klasörleri sol menüde göster
+function renderFolders(data) {
+    const menu = document.getElementById('menu');
+    menu.innerHTML = '';
 
-    feeds.forEach(feed => {
-        const li = document.createElement("li");
-        li.textContent = feed.title;
-        li.onclick = () => loadRSS(feed.url);
-        feedList.appendChild(li);
+    data.forEach((category, index) => {
+        const folder = document.createElement('div');
+        folder.className = 'folder';
+        folder.textContent = category.folder;
+
+        folder.addEventListener('click', () => {
+            renderFeeds(category.feeds, category.folder);
+        });
+
+        menu.appendChild(folder);
     });
 }
 
-// RSS okuma (CORS bypass için api.allorigins.win kullanıyoruz)
-async function loadRSS(url) {
-    const api = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
-    const res = await fetch(api);
-    const data = await res.json();
+// Klasör tıklandığında içindeki RSS kaynaklarını listele
+function renderFeeds(feeds, folderName) {
+    const feedList = document.getElementById('feed-list');
+    feedList.innerHTML = `<h2>${folderName}</h2>`;
+
+    feeds.forEach(feed => {
+        const item = document.createElement('div');
+        item.className = 'feed-item';
+        item.textContent = feed.title;
+
+        item.addEventListener('click', () => loadFeedContent(feed.url, feed.title));
+
+        feedList.appendChild(item);
+    });
+}
+
+// RSS içeriğini çek
+async function loadFeedContent(url, title) {
+    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+
+    const response = await fetch(proxyUrl);
+    const data = await response.json();
 
     const parser = new DOMParser();
     const xml = parser.parseFromString(data.contents, "text/xml");
 
     const items = xml.querySelectorAll("item");
-    const container = document.getElementById("articles");
-    container.innerHTML = "";
+
+    const content = document.getElementById('content');
+    content.innerHTML = `<h2>${title}</h2>`;
 
     items.forEach(item => {
-        const title = item.querySelector("title")?.textContent || "Başlık yok";
-        const desc = item.querySelector("description")?.textContent || "";
-        const link = item.querySelector("link")?.textContent || "#";
-        const date = item.querySelector("pubDate")?.textContent || "";
+        const article = document.createElement("div");
+        article.className = "article";
 
-        const div = document.createElement("div");
-        div.className = "article";
-        div.innerHTML = `
-            <h3>${title}</h3>
+        const itemTitle = item.querySelector("title")?.textContent || "No title";
+        const link = item.querySelector("link")?.textContent || "#";
+        const desc = item.querySelector("description")?.textContent || "";
+        const pubDate = item.querySelector("pubDate")?.textContent || "";
+
+        article.innerHTML = `
+            <h3><a href="${link}" target="_blank">${itemTitle}</a></h3>
             <p>${desc}</p>
-            <small>${date}</small><br>
-            <a href="${link}" target="_blank">Haberi oku</a>
+            <small>${pubDate}</small>
+            <hr>
         `;
-        container.appendChild(div);
+
+        content.appendChild(article);
     });
 }
 
+// Sayfa açılınca çalışsın
 loadFeeds();

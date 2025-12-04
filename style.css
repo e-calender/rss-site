@@ -1,3 +1,32 @@
+/* Varsayılan tema için - html elementine light-theme class'ı yoksa bile */
+html {
+  --bg-color: #f8fafc;
+  --text-color: #334155;
+  --header-color: #1e293b;
+  --secondary: #e2e8f0;
+  --category-bg-light: #f1f5f9;
+  --category-bg-hover-light: #e2e8f0;
+  --category-span-bg-light: #cbd5e1;
+  --table-border-color-light: #e2e8f0;
+  --table-header-bg-light: #f1f5f9;
+  --table-even-row-bg-light: #f8fafc;
+  --table-row-hover-light: #e2e8f0;
+  --link-color-light: #2563eb;
+  --search-border-color-light: #cbd5e1;
+  --search-placeholder-color-light: #94a3b8;
+  --search-bg-color-light: #ffffff;
+}
+
+/* Sonra light-theme ve dark tema tanımları gelsin */
+html.light-theme {
+  /* Aynı değerler - üstteki ile aynı */
+}
+
+html:not(.light-theme) {
+  /* Koyu tema değerleri */
+}
+
+
 html.light-theme {
   --bg-color: #f8fafc;
   --text-color: #334155;

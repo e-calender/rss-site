@@ -2,7 +2,7 @@
 
 ### Web Arayüzü:
 
-<a href="https://bakinazik.github.io/rss/" target="_blank">https://bakinazik.github.io/rss/</a>
+<a href="https://e-calender.github.io/rss-site/" target="_blank">https://e-calender.github.io/rss-site/</a>
 
 <table style="width:100%;">
   <tr>
@@ -14,7 +14,7 @@
 <br>
 
 Arama motoru olarak kullanabileceğin sorgu parametresi:
-<pre><code>https://bakinazik.github.io/rss/?q=<b>%s</b></code></pre>
+<pre><code>https://e-calender.github.io/rss-site/?q=<b>%s</b></code></pre>
 
 <br>
 

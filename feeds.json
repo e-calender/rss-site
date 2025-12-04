@@ -1,7 +1,21 @@
 [
-    { "title": "BBC News", "url": "https://feeds.bbci.co.uk/news/rss.xml" },
-    { "title": "CNN", "url": "http://rss.cnn.com/rss/edition.rss" },
-    { "title": "Reuters", "url": "https://feeds.reuters.com/reuters/topNews" },
-    { "title": "TechCrunch", "url": "https://techcrunch.com/feed/" },
-    { "title": "NTV", "url": "https://www.ntv.com.tr/rss" }
+    {
+        "folder": "Son Dakika",
+        "feeds": [
+            {
+                "title": "NTV - Son Dakika",
+                "url": "https://www.ntv.com.tr/son-dakika.rss"
+            }
+        ]
+    },
+
+    {
+        "folder": "Teknoloji",
+        "feeds": [
+            {
+                "title": "TechCrunch",
+                "url": "https://techcrunch.com/feed/"
+            }
+        ]
+    }
 ]

@@ -6,8 +6,8 @@
 
 <table style="width:100%;">
   <tr>
-    <td style="width:50%;"><a href="https://bakinazik.github.io/rss/" target="_blank"><img src="https://github.com/user-attachments/assets/be300e64-6d17-437f-bf60-560bf0bd4f6c" style="width:100%;"/></a></td>
-    <td style="width:50%;"><a href="https://bakinazik.github.io/rss/" target="_blank"><img src="https://github.com/user-attachments/assets/b37496dc-3c69-4007-8371-31b01f89a90c" style="width:100%;"/></a></td>
+    <td style="width:50%;"><a href="https://e-calender.github.io/rss-site/" target="_blank"><img src="https://github.com/user-attachments/assets/be300e64-6d17-437f-bf60-560bf0bd4f6c" style="width:100%;"/></a></td>
+    <td style="width:50%;"><a href="https://e-calender.github.io/rss-site/" target="_blank"><img src="https://github.com/user-attachments/assets/b37496dc-3c69-4007-8371-31b01f89a90c" style="width:100%;"/></a></td>
   </tr>
 </table>
 

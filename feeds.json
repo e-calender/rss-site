@@ -7,5 +7,9 @@
                 "url": "https://www.ntv.com.tr/son-dakika.rss"
             }
         ]
+    },
+    {
+        "folder": "Gündem",
+        "feeds": []
     }
 ]

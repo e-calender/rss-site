@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const rawMdUrl = 'https://raw.githubusercontent.com/bakinazik/rss/main/README.md';
+  const rawMdUrl = 'https://raw.githubusercontent.com/e-calender/rss-site//main/README.md';
   const output = document.getElementById('output');
   const themeToggle = document.getElementById('checkbox');
   const searchInput = document.getElementById('searchInput');
@@ -136,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       const searchTerm = searchInput.value.trim();
       const githubIssueUrl = searchTerm
-        ? `https://github.com/bakinazik/rss/issues/new?title=RSS%20isteği:%20${encodeURIComponent(searchTerm)}`
-        : 'https://github.com/bakinazik/rss/issues/new';
+        ? `https://github.com/e-calender/rss-site//issues/new?title=RSS%20isteği:%20${encodeURIComponent(searchTerm)}`
+        : 'https://github.com/e-calender/rss-site//issues/new';
       output.innerHTML = `
         <div class="no-results">
           <svg  xmlns="http://www.w3.org/2000/svg"  width="65"  height="65"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mood-sad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 10l.01 0" /><path d="M15 10l.01 0" /><path d="M9.5 15.25a3.5 3.5 0 0 1 5 0" /></svg><br>
@@ -478,7 +478,7 @@ function attachCheckboxListeners() {
   if (stickyBar) {
     const yapildiSpan = stickyBar.querySelector('.yapildi-span');
     const issueBtn = document.createElement('a');
-    issueBtn.href = 'https://github.com/bakinazik/rss/issues/new';
+    issueBtn.href = 'https://github.com/e-calender/rss-site//issues/new';
     issueBtn.target = '_blank';
     issueBtn.className = 'btn issue-footer-btn';
     issueBtn.textContent = 'Sorun Bildir';
